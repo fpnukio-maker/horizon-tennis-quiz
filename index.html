@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HORIZON テニスタイプ診断</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">HORIZON TENNIS SCHOOL</p>
+        <h1>あなたはどんなプレイヤー？</h1>
+        <h2><span class="brand-accent">HORIZON</span>テニスタイプ診断</h2>
+        <div class="one-minute">1分でわかる！</div>
+        <p class="lead">直感で答えて、あなたのプレースタイルをチェック！</p>
+        <button id="startBtn" class="primary">診断をはじめる</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="quizSection" class="card hidden">
+        <div class="progress-wrap">
+          <div class="progress-label"><span id="questionNo">1</span> / 5</div>
+          <div class="progress"><div id="progressBar"></div></div>
+        </div>
+        <h3 id="questionText"></h3>
+        <div id="options" class="options"></div>
+      </section>
+
+      <section id="resultSection" class="card hidden">
+        <div id="resultVisual" class="result-visual">🎾</div>
+        <p class="small-label">あなたのテニスタイプは…</p>
+        <h3 id="resultTitle"></h3>
+        <p id="resultDescription"></p>
+        <div class="result-grid">
+          <div>
+            <h4>あなたの武器</h4>
+            <p id="resultStrength"></p>
+          </div>
+          <div>
+            <h4>おすすめ</h4>
+            <p id="resultRecommend"></p>
+          </div>
+        </div>
+        <button id="surveyBtn" class="primary">続いて30秒アンケートへ</button>
+      </section>
+
+      <section id="surveySection" class="card hidden">
+        <p class="eyebrow dark">QUICK SURVEY</p>
+        <h3>最後に、簡単なアンケートにご協力ください！</h3>
+        <p class="muted">今後のレッスンやイベント企画の参考にさせていただきます。</p>
+
+        <form id="surveyForm">
+          <label>お名前（必須）
+            <input type="text" id="name" placeholder="例：山田 太郎" required>
+          </label>
+<fieldset>
+            <legend>Q1. HORIZONに通う主な目的は？（複数可）</legend>
+            <label><input type="checkbox" name="purpose" value="もっと上手くなりたい">もっと上手くなりたい</label>
+            <label><input type="checkbox" name="purpose" value="試合に出たい・勝ちたい">試合に出たい・勝ちたい</label>
+            <label><input type="checkbox" name="purpose" value="運動不足を解消したい">運動不足を解消したい</label>
+            <label><input type="checkbox" name="purpose" value="健康・体力を維持したい">健康・体力を維持したい</label>
+            <label><input type="checkbox" name="purpose" value="趣味として楽しみたい">趣味として楽しみたい</label>
+            <label><input type="checkbox" name="purpose" value="仲間との交流を楽しみたい">仲間との交流を楽しみたい</label>
+            <label><input type="checkbox" name="purpose" value="リフレッシュしたい">ストレス発散・リフレッシュしたい</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q2. 今後、参加・利用してみたいものは？（複数可）</legend>
+            <label><input type="checkbox" name="interest" value="個別レッスン">コーチとの個別レッスン</label>
+            <label><input type="checkbox" name="interest" value="テーマ別レッスン">テーマ別レッスン</label>
+            <label><input type="checkbox" name="interest" value="試合・ゲーム会">レベル別の試合・ゲーム会</label>
+            <label><input type="checkbox" name="interest" value="肉肉カップ">肉肉カップなどのイベント</label>
+            <label><input type="checkbox" name="interest" value="BBQ">BBQなどの交流イベント</label>
+            <label><input type="checkbox" name="interest" value="友人・家族参加イベント">家族や友人も参加できるイベント</label>
+            <label><input type="checkbox" name="interest" value="ピックルボール">ピックルボールなど新しいスポーツ</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q3. 続けるうえで一番大切なことは？</legend>
+            <label><input type="radio" name="priority" value="上達を実感できること" required>上達を実感できること</label>
+            <label><input type="radio" name="priority" value="コーチ・指導内容">コーチ・指導内容</label>
+            <label><input type="radio" name="priority" value="楽しく運動できること">楽しく運動できること</label>
+            <label><input type="radio" name="priority" value="仲間・人間関係">仲間・人間関係</label>
+            <label><input type="radio" name="priority" value="スクールの雰囲気">スクールの雰囲気</label>
+            <label><input type="radio" name="priority" value="通いやすさ">曜日・時間などの通いやすさ</label>
+            <label><input type="radio" name="priority" value="料金">料金</label>
+            <label><input type="radio" name="priority" value="イベント・楽しさ">レッスン以外のイベント・楽しさ</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q4. 友人や家族に紹介したいと思いますか？</legend>
+            <label><input type="radio" name="referral" value="ぜひ紹介したい" required>ぜひ紹介したい</label>
+            <label><input type="radio" name="referral" value="機会があれば紹介したい">機会があれば紹介したい</label>
+            <label><input type="radio" name="referral" value="どちらともいえない">どちらともいえない</label>
+            <label><input type="radio" name="referral" value="あまり思わない">あまり思わない</label>
+          </fieldset>
+
+          <label>Q5. 「こんなレッスン・イベントがあったら参加したい！」があれば教えてください（任意）
+            <textarea id="comment" rows="4" placeholder="自由にご記入ください"></textarea>
+          </label>
+
+          <button type="submit" class="primary">回答を送信</button>
+        </form>
+      </section>
+
+      <section id="thanksSection" class="card hidden center">
+        <div class="thanks-icon">🎉</div>
+        <h3>ご回答ありがとうございました！</h3>
+        <p>今後のHORIZONをもっと楽しんでいただける企画づくりに活用させていただきます。</p>
+      </section>
+    </main>
+
+    <footer>HORIZON TENNIS SCHOOL</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

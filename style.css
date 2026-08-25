@@ -1,0 +1,137 @@
+*{box-sizing:border-box}
+:root{
+  --navy:#14365c;
+  --blue:#2d79b7;
+  --blue2:#1f6aa8;
+  --yellow:#dff13f;
+  --bg:#f3f7fb;
+  --ink:#263747;
+  --muted:#677786;
+  --card:#ffffff;
+}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+}
+.app{min-height:100vh}
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+  background:
+    radial-gradient(circle at 75% 85%, rgba(255,255,255,.08), transparent 26%),
+    linear-gradient(145deg,#07539a 0%,#0866b4 55%,#0a4d8d 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.hero-inner{position:relative;z-index:2;max-width:720px;text-align:center}
+.eyebrow{letter-spacing:.12em;font-weight:700;font-size:12px;opacity:.9}
+.eyebrow.dark{color:var(--blue)}
+h1{
+  font-size:clamp(32px,5.2vw,68px);
+  line-height:1.15;
+  margin:.28em 0 .18em;
+  white-space:nowrap;
+  font-weight:900;
+  letter-spacing:.01em;
+}
+h2{
+  font-size:clamp(27px,4.5vw,58px);
+  line-height:1.15;
+  margin:.1em 0 .7em;
+  white-space:nowrap;
+  font-weight:900;
+}
+.brand-accent{color:var(--yellow);margin-right:.08em}
+.one-minute{
+  display:inline-block;
+  color:var(--yellow);
+  font-size:clamp(22px,2.8vw,36px);
+  font-weight:900;
+  margin:8px 0 18px;
+  padding:0 18px;
+  position:relative;
+}
+.one-minute:before,.one-minute:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:72px;
+  height:1px;
+  background:rgba(255,255,255,.75);
+}
+.one-minute:before{right:100%}
+.one-minute:after{left:100%}
+.lead{font-size:clamp(16px,2vw,22px);opacity:.96;margin:4px 0 30px;font-weight:600}
+.primary{
+  border:0;border-radius:999px;
+  padding:18px 38px;
+  min-width:260px;
+  font-size:18px;font-weight:900;
+  color:#14365c;background:var(--yellow);
+  cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.20)
+}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.card{
+  background:var(--card);
+  border-radius:24px;
+  padding:28px 22px;
+  box-shadow:0 15px 40px rgba(20,54,92,.10);
+  margin-top:20px;
+}
+.hidden{display:none}
+.progress-wrap{margin-bottom:20px}
+.progress-label{font-size:13px;color:var(--muted);margin-bottom:8px}
+.progress{height:8px;background:#e5edf4;border-radius:99px;overflow:hidden}
+#progressBar{height:100%;width:20%;background:var(--blue);transition:.25s}
+#questionText{font-size:25px;margin:8px 0 22px}
+.options{display:grid;gap:12px}
+.option{
+  width:100%;text-align:left;
+  border:1px solid #dce6ef;background:#fff;
+  border-radius:15px;padding:16px;
+  font-size:16px;font-weight:700;color:var(--ink);
+  cursor:pointer;transition:.15s
+}
+.option:hover,.option:active{border-color:var(--blue);background:#f1f8fd;transform:translateY(-1px)}
+.result-visual{font-size:72px;text-align:center;margin:8px 0}
+.small-label{text-align:center;color:var(--muted);font-weight:700}
+#resultTitle{text-align:center;font-size:28px;color:var(--navy)}
+#resultDescription{line-height:1.8}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.result-grid>div{background:#f6f9fc;border-radius:16px;padding:16px}
+.result-grid h4{margin:0 0 8px;color:var(--blue)}
+.muted{color:var(--muted);line-height:1.6}
+form{display:grid;gap:18px;margin-top:22px}
+label{display:block;font-weight:700}
+input[type=text],textarea{
+  width:100%;margin-top:8px;padding:13px 14px;
+  border:1px solid #d7e2ec;border-radius:12px;
+  font:inherit;background:#fff
+}
+fieldset{
+  border:1px solid #dce5ed;border-radius:16px;padding:15px;
+  display:grid;gap:10px
+}
+legend{font-weight:800;color:var(--navy);padding:0 6px}
+fieldset label{font-weight:500}
+input[type=checkbox],input[type=radio]{margin-right:8px}
+.center{text-align:center}
+.thanks-icon{font-size:64px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}
+@media(max-width:600px){
+  .hero{min-height:92vh;padding:30px 14px}
+  h1{font-size:clamp(25px,8vw,36px);white-space:nowrap}
+  h2{font-size:clamp(21px,6.7vw,31px);white-space:nowrap}
+  .one-minute{font-size:22px}
+  .one-minute:before,.one-minute:after{width:34px}
+  .lead{font-size:15px}
+  .card{padding:22px 16px}
+  #questionText{font-size:22px}
+  .result-grid{grid-template-columns:1fr}
+}
